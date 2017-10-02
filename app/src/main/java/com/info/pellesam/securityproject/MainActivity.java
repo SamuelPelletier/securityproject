@@ -1,4 +1,4 @@
-package main;
+package com.info.pellesam.securityproject;
 
 import android.app.Activity;
 import android.os.Bundle;
