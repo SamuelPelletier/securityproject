@@ -15,6 +15,5 @@ public class DisplayItemActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_view);
-        Button button = (Button) findViewById(R.id.button_return);
     }
 }

@@ -24,6 +24,17 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_view);
+
+        Category cat1 = new Category("Cat1");
+        Category cat2 = new Category("Cat2");
+        Category cat3 = new Category("Cat3");
+        Category cat4 = new Category("Cat4");
+
+        categories.add(cat1);
+        categories.add(cat2);
+        categories.add(cat3);
+        categories.add(cat4);
+
         listCategory = (ListView) findViewById(R.id.list_cat);
 
         listCategory.setAdapter((ListAdapter) new CustomViewAdapterCategories(getApplicationContext(),categories));

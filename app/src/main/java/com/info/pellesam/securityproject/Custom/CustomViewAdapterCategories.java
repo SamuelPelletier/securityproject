@@ -1,13 +1,17 @@
 package com.info.pellesam.securityproject.Custom;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.info.pellesam.securityproject.Activity.DisplayItemsActivity;
+import com.info.pellesam.securityproject.Activity.MainActivity;
 import com.info.pellesam.securityproject.Entity.Category;
 import com.info.pellesam.securityproject.R;
 
@@ -38,8 +42,10 @@ public class CustomViewAdapterCategories extends ArrayAdapter<Category> implemen
 
         categoryTitle.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Toast toast = Toast.makeText(context, "Merci d'avoir cliquer", Toast.LENGTH_SHORT);
-                toast.show();
+                Category category = categories.get(position);
+                Intent myIntent = new Intent(context, DisplayItemsActivity.class);
+                context.startActivity(myIntent);
+
             }
         });
 
