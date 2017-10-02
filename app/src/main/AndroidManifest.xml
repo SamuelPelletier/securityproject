@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".MainActivity">
+            android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category
@@ -20,11 +20,11 @@
         </activity>
 
         <activity
-            android:name=".DisplayItemActivity">
+            android:name=".Activity.DisplayItemActivity">
         </activity>
 
         <activity
-            android:name=".DisplaySubCategoryActivity">
+            android:name=".Activity.DisplaySubCategoryActivity">
         </activity>
 
     </application>

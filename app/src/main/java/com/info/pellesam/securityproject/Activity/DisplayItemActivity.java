@@ -1,8 +1,10 @@
-package com.info.pellesam.securityproject;
+package com.info.pellesam.securityproject.Activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.info.pellesam.securityproject.R;
 
 /**
  * Created by pellesam on 02/10/2017.
