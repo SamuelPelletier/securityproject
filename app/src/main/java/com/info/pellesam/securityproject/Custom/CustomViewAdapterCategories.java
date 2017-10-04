@@ -15,6 +15,7 @@ import com.info.pellesam.securityproject.Activity.MainActivity;
 import com.info.pellesam.securityproject.Entity.Category;
 import com.info.pellesam.securityproject.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -44,6 +45,7 @@ public class CustomViewAdapterCategories extends ArrayAdapter<Category> implemen
             public void onClick(View v) {
                 Category category = categories.get(position);
                 Intent myIntent = new Intent(context, DisplayItemsActivity.class);
+                myIntent.putExtra("category",(Serializable)category);
                 context.startActivity(myIntent);
 
             }

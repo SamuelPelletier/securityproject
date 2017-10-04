@@ -6,13 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.info.pellesam.securityproject.Activity.DisplayItemActivity;
 import com.info.pellesam.securityproject.Entity.Category;
 import com.info.pellesam.securityproject.Entity.Item;
 import com.info.pellesam.securityproject.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -36,12 +39,20 @@ public class CustomViewAdapterItems extends ArrayAdapter<Item> implements View.O
 
         TextView itemTitle = (TextView) rowView.findViewById(R.id.item_title);
 
+        ImageView logo = (ImageView) rowView.findViewById(R.id.logo);
+        Glide.with(context).load(items.get(position).getUrlLogo()).crossFade().into(logo);
+
         itemTitle.setText(items.get(position).getTitle());
 
         itemTitle.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent myIntent = new Intent(context, DisplayItemActivity.class);
-                context.startActivity(myIntent);
+                changeActivity(context, position, items);
+            }
+        });
+
+        logo.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                changeActivity(context, position, items);
             }
         });
 
@@ -50,5 +61,13 @@ public class CustomViewAdapterItems extends ArrayAdapter<Item> implements View.O
 
     public void onClick(View v) {
 
+    }
+
+    private void changeActivity(Context context, int position, ArrayList<Item> items)
+    {
+        Item item = items.get(position);
+        Intent myIntent = new Intent(context, DisplayItemActivity.class);
+        myIntent.putExtra("item",(Serializable)item);
+        context.startActivity(myIntent);
     }
 }

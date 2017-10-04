@@ -7,9 +7,14 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/black"
         android:gravity="center_vertical"
+        android:paddingBottom="30px"
+        android:paddingTop="30px"
         android:text="Catégories"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="50sp" />
 
     <ListView
         android:id="@+id/list_cat"

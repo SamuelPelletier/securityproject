@@ -1,12 +1,13 @@
 package com.info.pellesam.securityproject.Entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by pellesam on 02/10/2017.
  */
 
-public class Category {
+public class Category implements Serializable{
 
     private String id;
     private String title;

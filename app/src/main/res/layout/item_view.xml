@@ -7,15 +7,21 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="66dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/title_item"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:background="@android:color/black"
+            android:paddingBottom="30px"
+            android:paddingTop="30px"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="50sp" />
 
     </LinearLayout>
 
@@ -31,13 +37,16 @@
             android:layout_weight="1"
             app:srcCompat="@android:color/holo_blue_bright" />
 
-        <EditText
-            android:id="@+id/text1_item"
+        <TextView
+            android:id="@+id/regles"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:layout_weight="1.00"
+            android:paddingTop="20px"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -45,13 +54,14 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/text2_item"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:layout_weight="1"
+            android:padding="20px"
+            android:text="TextView"
+            android:textSize="24sp" />
     </LinearLayout>
 
 </LinearLayout>

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class MainActivity extends Activity {
 
     private ListView listCategory;
-    private ArrayList<Category> categories;
+    private ArrayList<Category> categories = new ArrayList<Category>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,11 +29,13 @@ public class MainActivity extends Activity {
         Category cat2 = new Category("Cat2");
         Category cat3 = new Category("Cat3");
         Category cat4 = new Category("Cat4");
+        Category cat5 = new Category("Cat5");
 
         categories.add(cat1);
         categories.add(cat2);
         categories.add(cat3);
         categories.add(cat4);
+        categories.add(cat5);
 
         listCategory = (ListView) findViewById(R.id.list_cat);
 
