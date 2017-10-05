@@ -13,6 +13,9 @@ public class Category implements Serializable{
     private String title;
     private ArrayList<Item> items;
 
+    public Category() {
+    }
+
     public Category(String title) {
         this.title = title;
     }
@@ -30,5 +33,17 @@ public class Category implements Serializable{
         return this.title;
     }
 
-    public ArrayList<Item> getSubCategories() { return this.items; }
+    public ArrayList<Item> getItems() { return this.items; }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
 }

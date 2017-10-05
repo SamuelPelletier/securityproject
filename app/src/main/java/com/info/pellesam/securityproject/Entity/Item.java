@@ -16,6 +16,8 @@ public class Item implements Serializable{
     private String regle;
     private String description;
 
+    public Item(){};
+
     public Item(String urlLogo, String title, String urlImage, String regle, String description) {
         this.urlLogo = urlLogo;
         this.title = title;
@@ -46,5 +48,29 @@ public class Item implements Serializable{
 
     public String getDescription() {
         return description;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setUrlLogo(String urlLogo) {
+        this.urlLogo = urlLogo;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
+    }
+
+    public void setRegle(String regle) {
+        this.regle = regle;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
