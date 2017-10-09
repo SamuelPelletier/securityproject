@@ -2,12 +2,15 @@ package com.info.pellesam.securityproject.Activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Debug;
+import android.util.Log;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.info.pellesam.securityproject.Custom.CustomViewAdapterCategories;
 import com.info.pellesam.securityproject.Entity.Category;
 import com.info.pellesam.securityproject.R;
+import com.info.pellesam.securityproject.Service.GetJSON;
 
 import java.util.ArrayList;
 
@@ -24,6 +27,9 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_view);
+
+        GetJSON json = new GetJSON();
+        json.getCategories();
 
         Category cat1 = new Category("Cat1");
         Category cat2 = new Category("Cat2");
