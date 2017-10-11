@@ -67,6 +67,7 @@ public class CustomViewAdapterItems extends ArrayAdapter<Item> implements View.O
     {
         Item item = items.get(position);
         Intent myIntent = new Intent(context, DisplayItemActivity.class);
+        myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         myIntent.putExtra("item",(Serializable)item);
         context.startActivity(myIntent);
     }

@@ -45,6 +45,7 @@ public class CustomViewAdapterCategories extends ArrayAdapter<Category> implemen
             public void onClick(View v) {
                 Category category = categories.get(position);
                 Intent myIntent = new Intent(context, DisplayItemsActivity.class);
+                myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 myIntent.putExtra("category",(Serializable)category);
                 context.startActivity(myIntent);
 

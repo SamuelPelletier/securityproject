@@ -33,13 +33,7 @@ public class DisplayItemsActivity extends Activity{
 
         TextView category_title = (TextView) findViewById(R.id.cat_title);
         category_title.setText(category.getTitle());
-
-        Item item1 = new Item("http://www.gifsanimes.fr/clipart/cartoons/bob-l-eponge/bob-l-eponge-gifs-animes-6121879.jpg","item1","http://www.gifsanimes.fr/clipart/cartoons/bob-l-eponge/bob-l-eponge-gifs-animes-6121879.jpg","regles","description");
-        items.add(item1);
-        Item item2 = new Item("http://www.gifsanimes.fr/clipart/cartoons/bob-l-eponge/bob-l-eponge-gifs-animes-6121879.jpg","item2","http://www.gifsanimes.fr/clipart/cartoons/bob-l-eponge/bob-l-eponge-gifs-animes-6121879.jpg","regles","description");
-        items.add(item2);
-        Item item3 = new Item("http://www.gifsanimes.fr/clipart/cartoons/bob-l-eponge/bob-l-eponge-gifs-animes-6121879.jpg","item3","http://www.gifsanimes.fr/clipart/cartoons/bob-l-eponge/bob-l-eponge-gifs-animes-6121879.jpg","regles","description");
-        items.add(item3);
+        items = category.getItems();
 
         listItem = (ListView) findViewById(R.id.list_items);
 
