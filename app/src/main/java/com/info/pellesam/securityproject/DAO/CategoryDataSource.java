@@ -50,37 +50,41 @@ public class CategoryDataSource {
         return newCategory;
     }
 
-    public ArrayList<Category> getAllCategories() {
-        ArrayList<Category> categories = new ArrayList<Category>();
-        Cursor cursor = database.query(CategoryDB.CATEGORY_TABLE_NAME,
-                allColumns, null, null, null, null, null);
+    public ArrayList<String> getAllCategoriesTitle() {
+        ArrayList<String> categoriesTitles = new ArrayList<String>();
+        Cursor cursor = database.rawQuery("SELECT DISTINCT "+CategoryDB.TITLE_CATEGORY+" FROM "+CategoryDB.CATEGORY_TABLE_NAME,null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            Category category = cursorToCategory(cursor);
-            categories.add(category);
+            String categoriesTitle = cursorToString(cursor);
+            categoriesTitles.add(categoriesTitle);
             cursor.moveToNext();
         }
         cursor.close();
-        return categories;
+        return categoriesTitles;
     }
 
-    public Category getAllCategoryByTitle(String title) {
-        ArrayList<Item> items = new ArrayList<Item>();
-        Cursor cursor = database.query(CategoryDB.CATEGORY_TABLE_NAME,
-                allColumns, null, null, null, null, null);
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            Category category = cursorToCategory(cursor);
-            if(category.getTitle() == title) {
-                items.add(category.getItems().get(0));
+    public ArrayList<Category> getAllCategories() {
+        ArrayList<Category> categories = new ArrayList<Category>();
+        ArrayList<String> categoriesTitles = getAllCategoriesTitle();
+        for(int i =0; i< categoriesTitles.size();i++) {
+            ArrayList<Item> items = new ArrayList<Item>();
+            Cursor cursor = database.query(CategoryDB.CATEGORY_TABLE_NAME,
+                    allColumns, null, null, null, null, null);
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                Category category = cursorToCategory(cursor);
+                if (category.getTitle().equals(categoriesTitles.get(i))) {
+                    items.add(category.getItems().get(0));
+                }
+                cursor.moveToNext();
             }
-            cursor.moveToNext();
+            Category finalCategory = new Category();
+            finalCategory.setTitle(categoriesTitles.get(i));
+            finalCategory.setItems(items);
+            categories.add(finalCategory);
+            cursor.close();
         }
-        Category finalCategory = new Category();
-        finalCategory.setTitle(title);
-        finalCategory.setItems(items);
-        cursor.close();
-        return finalCategory;
+        return categories;
     }
 
     private Category cursorToCategory(Cursor cursor) {
@@ -98,8 +102,18 @@ public class CategoryDataSource {
         return category;
     }
 
+    private String cursorToString(Cursor cursor) {
+        String string = new String();
+        string = cursor.getString(0);
+        return string;
+    }
+
     public void deleteCategory(Category category) {
         database.delete(CategoryDB.CATEGORY_TABLE_NAME, CategoryDB.TITLE_CATEGORY
                 + " = \"" + String.valueOf(category.getTitle())+"\"", null);
+    }
+
+    public void deleteAll() {
+        database.delete(CategoryDB.CATEGORY_TABLE_NAME, "1", null);
     }
 }
