@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
@@ -30,6 +31,10 @@ public class DisplayItemActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_view);
+
+        TextView textView1 = (TextView) findViewById(R.id.title_item);
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "Pistilli-Roman.otf");
+        textView1.setTypeface(typeface);
 
         Intent intent = getIntent();
         Item item = (Item) intent.getExtras().getSerializable("item");
