@@ -2,6 +2,7 @@ package com.info.pellesam.securityproject.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.widget.ListAdapter;
@@ -32,6 +33,8 @@ public class DisplayItemsActivity extends Activity{
         Category category = (Category) intent.getExtras().getSerializable("category");
 
         TextView category_title = (TextView) findViewById(R.id.cat_title);
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "Pistilli-Roman.otf");
+        category_title.setTypeface(typeface);
         category_title.setText(category.getTitle());
         items = category.getItems();
 

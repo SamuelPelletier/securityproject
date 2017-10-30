@@ -8,9 +8,15 @@
         android:id="@+id/category_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="100px"
-        android:paddingTop="100px"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/border"
+        android:paddingBottom="40dp"
+        android:paddingTop="40dp"
         android:text="TextView"
         android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
         android:textSize="40sp" />
 </LinearLayout>

@@ -1,10 +1,12 @@
 package com.info.pellesam.securityproject.Activity;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.info.pellesam.securityproject.Custom.CustomViewAdapterCategories;
 import com.info.pellesam.securityproject.Entity.Category;
@@ -31,6 +33,10 @@ public class MainActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_view);
+
+        TextView textView1 = (TextView) findViewById(R.id.title_category);
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "Pistilli-Roman.otf");
+        textView1.setTypeface(typeface);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://samuelpelletier.github.io")

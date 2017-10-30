@@ -7,18 +7,18 @@
         android:id="@+id/cat_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/black"
         android:gravity="center_vertical"
         android:paddingBottom="30px"
         android:paddingTop="30px"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
-        android:textSize="50sp" />
+        android:textSize="50sp"
+        android:background="@drawable/gradient_title"/>
 
     <ListView
         android:id="@+id/list_items"
         android:layout_width="match_parent"
-        android:layout_height="422dp" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>
