@@ -50,7 +50,7 @@ public class CategoryDataSource {
         return newCategory;
     }
 
-    public ArrayList<String> getAllCategoriesTitle() {
+    public ArrayList<String> getAllCategoriesSQLRequest() {
         ArrayList<String> categoriesTitles = new ArrayList<String>();
         Cursor cursor = database.rawQuery("SELECT DISTINCT "+CategoryDB.TITLE_CATEGORY+" FROM "+CategoryDB.CATEGORY_TABLE_NAME,null);
         cursor.moveToFirst();
@@ -65,7 +65,7 @@ public class CategoryDataSource {
 
     public ArrayList<Category> getAllCategories() {
         ArrayList<Category> categories = new ArrayList<Category>();
-        ArrayList<String> categoriesTitles = getAllCategoriesTitle();
+        ArrayList<String> categoriesTitles = getAllCategoriesSQLRequest();
         for(int i =0; i< categoriesTitles.size();i++) {
             ArrayList<Item> items = new ArrayList<Item>();
             Cursor cursor = database.query(CategoryDB.CATEGORY_TABLE_NAME,

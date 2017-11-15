@@ -20,7 +20,7 @@ public class CategoryDB extends SQLiteOpenHelper
 
     public CategoryDB(Context context)
     {
-        super(context, Environment.getExternalStorageDirectory()+"/"+DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
     @Override
     public void onCreate(SQLiteDatabase db)
